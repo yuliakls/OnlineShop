@@ -1,0 +1,51 @@
+﻿@model MVC5_PROJECT.Models.Sell
+
+@{
+    ViewBag.Title = "MyPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/jquery-3.1.1.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+<h2>MyPage</h2>
+
+<h3> All Orders :</h3><br/>
+
+
+
+    <table id="tab" >
+
+
+        <tr>
+            <td><pre>  product number  </pre></td>
+            <td><pre>  product price  </pre></td>
+            <td><pre>  order number  </pre></td>
+        </tr>
+
+
+    </table>
+
+
+    <script language="javascript">
+
+        $.get("../Sell/GetSellsByJson", null, BindData);
+
+        function BindData(sells) {
+            var tbl = $("#tab");
+            var i;
+            for (i = 0; i < sells.length; i++) {
+                var newrow = "<tr>" +
+                    "<td>" + sells[i].Product_ID + "</td>" +
+                   "<td>" + sells[i].Price + "</td>" +
+                   "<td>" + sells[i].PurchaseID + "</td>" +
+                   "</tr>";
+                tbl.append(newrow);
+            }
+
+        }
+
+
+    </script>
+

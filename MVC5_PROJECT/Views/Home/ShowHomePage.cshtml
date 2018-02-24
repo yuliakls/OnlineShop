@@ -1,0 +1,75 @@
+﻿@model MVC5_PROJECT.ModelView.ProductViewModel
+@using MVC5_PROJECT.Models;
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+</head>
+<body>
+
+    <H2 class="visible-md-inline-block">Products:</H2>
+    <br />
+    <table>
+
+        @foreach (Product obj in Model.Prod_List)
+        {
+            
+            <tr>
+                <td><img src=@obj.Pic_URL /></td>
+                <td class="product_name">@obj.Name</td>
+                <td class="product_des">@obj.Description</td>
+                @*<td class="product_buy"><button  onclick="location.href='@Url.Content("~/Product/Purchase")'" type="button" class="btn btn-default navbar-btn"> Buy now for <br/><div class="alert-danger">@obj.Price ‏₪</div></button></td>
+                <td class="product_buy"><button type="button" class="btn btn-default navbar-btn">
+                     Buy now for <br/><div class="alert-danger">@obj.Price ‏₪
+                    div></button><a href="@Url.Action("Purchase", "Product", new {@ProdID = @obj.ID, @Price=@obj.Price})"/> </td>*@
+                <td class="product_buy"><a href="@Url.Action("Purchase", "Product", new {@ProdID = @obj.ID, @Price=@obj.Price,@ProdName=@obj.Name})" class="btn btn-default navbar-btn"> Buy now for <br /><div class="alert-danger">@obj.Price ‏₪ </div></a></td>
+</tr>
+
+        }
+    </table>
+
+
+
+
+
+    @*<table id="tab">
+
+        {
+            <tr>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+
+        }
+    </table>
+
+    <script language="javascript">
+
+        $.get("GetProductsByJson", null, BindData);
+        function BindData(products)
+        {
+            var tbl = $("#tab")
+
+            for (i = o; i < products.length; i++)
+            {
+                var newrow = "<tr>" +
+                    "<td>" + products[i].Name + "</td>"+
+                    "<td>" + products[i].Description + "</td>" +
+                   "<td><img src='" + products[i].Pic_URL + "'/></td>"+
+                   "</tr>"
+                tbl.append(newrow);
+            }
+        }
+
+    </script>*@
+
+
+</body>
+</html>

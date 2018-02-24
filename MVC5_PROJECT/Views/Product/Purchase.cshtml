@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Purchase";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Purchase</h2>
+
+<div>
+
+
+@*<table id="tab">
+
+            {
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+
+            }
+        </table>
+
+    <script language="javascript">
+
+            $.get("GetProductsByJson", null, BindData);
+            function BindData(products)
+            {
+                var tbl = $("#tab")
+
+                for (i = o; i < products.length; i++)
+                {
+                    var newrow = "<tr>" +
+                        "<td>" + products[i].Name + "</td>"+
+                        "<td>" + products[i].Description + "</td>" +
+                       "<td><img src='" + products[i].Pic_URL + "'/></td>"+
+                       "</tr>"
+                    tbl.append(newrow);
+                }
+            }
+
+    </script>*@
+
+    <div class="alert-success"> Summary :</div>
+    <p>
+        Product Name : @Session["ProdName"].ToString() <br />
+        Product Price : @Session["Price"].ToString() <br />
+
+
+
+    </p>
+
+    <div class="product_buy">
+        <a href="@Url.Action("Submit", "Sell")" class="btn btn-default navbar-btn">
+         Purchase for :
+        <div class="alert-info"> Purchase for : @Session["Price"].ToString() ‏₪ </div></a>
+    </div>
+    
+
+</div>

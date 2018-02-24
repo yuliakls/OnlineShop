@@ -1,0 +1,195 @@
+﻿
+
+
+body {
+    padding-top: 50px;
+    padding-left:30px;
+    padding-right:30px;
+    padding-bottom: 20px;
+    /*background-color:#DCB1F0;*/
+       
+    background-image:url("https://www.xmple.com/wallpaper/white-gradient-purple-linear-1920x1080-c2-fffaf0-8a2be2-a-15-f-14.svg");
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    /*background-color:aqua;*/
+    font-size:35px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+
+
+.page{
+    width: 70%;
+    
+}
+
+
+
+header{
+    padding: 1em;
+    clear: both;
+    text-align: center;
+    color: #66ff33;
+    font-size: 30px;
+}
+
+footer{
+    text-align: center;
+    color: black;
+    font-size: 10px;
+    clear: both;
+}
+
+
+section{
+    font-size: 25px;
+    text-align: center;
+
+}
+
+aside {
+    position:relative;
+    float: left;
+    width: 30%;
+    margin: 10px;
+    padding: 10px;
+    text-align: left;
+
+}
+
+
+ul li{
+    font-size: 24px;
+    padding: 5px;
+    margin: 5px;
+
+}
+ ul {
+    font-size: 34px;
+    padding: 5px;
+    margin: 5px;
+
+}
+   
+ ul a {
+    text-decoration: none;
+    color:black;
+
+}
+
+ ul {
+    list-style-type:none;
+
+}
+
+nav a {
+
+font-family:'Harlow Solid';
+color:#DCB1F0;
+margin:50px;
+font-size:34px;
+
+
+}
+nav a:hover {
+    color:#B22EF0;
+    text-decoration:none;
+   
+}
+
+img {
+
+    width:200px;
+    height:auto;
+    border:3px double black;
+
+
+}
+
+.small_img {
+
+    width:80px;
+    height:auto;
+    border:1px double black;
+}
+
+
+
+table {
+font-size:25px;
+font-style:italic;
+margin:5px;
+
+}
+
+table tr{
+    border:2px groove purple;
+
+}
+
+body table {
+margin-left:200px;
+    
+     
+
+}
+
+.product_name {
+
+    width:150px;
+    font-size:30px;
+}
+
+.product_des {
+
+    width:300px;
+    
+}
+
+.product_buy {
+    width:120px;
+    
+
+}
+
+    .product_buy button{
+     font-size:30px;
+     color:palevioletred;
+     font-family:'Harlow Solid';
+    
+    }
+     
+.add_product1 form{
+
+    width: 15%;
+    float: left;
+
+}
+.table_manager table{
+
+   font-size:25px;
+    width:70%;
+    float: right;
+
+
+}

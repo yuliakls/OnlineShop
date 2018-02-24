@@ -1,0 +1,43 @@
+﻿@model MVC5_PROJECT.Models.Customer
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Beauty Shop</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href=@Url.Content("~/Content/Site.css") rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <button onclick="location.href='@Url.Content("~/Customer/Register")'" type="button" class="btn btn-default navbar-btn">Register</button>
+    <button type="button" class="btn btn-default navbar-btn">Sign in</button>
+
+
+    <nav class="navbar navbar-inverse">
+
+        <a href=@Url.Content("~/")>Main</a>
+        <a href=@Url.Content("~/")>Additional Service</a>
+        <a href=@Url.Content("~/")>Contacts</a>
+        <a href=@Url.Content("~/")>About us</a>
+
+    </nav>
+
+
+    <div>
+
+        Customer FN: @Model.FName <br />
+        Customer LN: @Model.LName <br />
+        Customer EM: @Model.Email <br />
+        Customer PW: @Model.PW <br />
+
+    </div>
+</body>
+</html>

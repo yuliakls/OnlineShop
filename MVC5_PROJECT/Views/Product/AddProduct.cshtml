@@ -1,0 +1,90 @@
+﻿@model MVC5_PROJECT.ModelView.ProductViewModel
+
+@using MVC5_PROJECT.Models;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddProduct</title>
+</head>
+<body>
+    <div class="add_product1"> 
+        
+        @using (Html.BeginForm("Submit", "Product", FormMethod.Post))
+        {
+            <p>Product Name: </p>@Html.TextBoxFor(m => m.Prod.Name)  @Html.ValidationMessageFor(x => x.Prod.Name)
+            <br />
+                <p>Description: </p>@Html.TextBoxFor(m => m.Prod.Description)  @Html.ValidationMessageFor(x => x.Prod.Description)
+                <br />
+                <p>Manufacturer: </p>@Html.TextBoxFor(m => m.Prod.Manufacturer)  @Html.ValidationMessageFor(x => x.Prod.Manufacturer)
+                <br />
+                <p>Amount: </p>@Html.TextBoxFor(m => m.Prod.Amount)  @Html.ValidationMessageFor(x => x.Prod.Amount)
+                <br />
+                <p>Supplier's Price: </p>@Html.TextBoxFor(m => m.Prod.Supplier_Price)  @Html.ValidationMessageFor(x => x.Prod.Supplier_Price)
+                <br />
+                <p>Price: </p>@Html.TextBoxFor(m => m.Prod.Price)  @Html.ValidationMessageFor(x => x.Prod.Price)
+                <br />
+                <p>Pic URL: </p>@Html.TextBoxFor(m => m.Prod.Pic_URL)  @Html.ValidationMessageFor(x => x.Prod.Pic_URL)
+                <br />
+                <input id="Submit1" type="submit" value="Add Product" />
+                <br />
+
+        }
+
+
+
+
+
+        @*<form action="Submit" method="post">
+
+            Name: <input id="Text1" name="Name" type="text" value="@Model.Prod.Name" />@Html.ValidationMessageFor(x => x.Prod.Name)
+            <br />
+            Description: <input id="Password1" name="Description" type="text" value="@Model.Prod.Description" /> @Html.ValidationMessageFor(x => x.Prod.Description)
+            <br />
+            Manufacturer: <input id="Text1" name="Manufacturer" type="text" value="@Model.Prod.Manufacturer" /> @Html.ValidationMessageFor(x => x.Prod.Manufacturer)
+            <br />
+            Amount: <input id="Text1" name="Amount" type="number" value="@Model.Prod.Amount" /> @Html.ValidationMessageFor(x => x.Prod.Amount)
+            <br />
+            Supplier Price: <input id="Text1" name="Supplier_Price" type="number" value="@Model.Prod.Supplier_Price" /> @Html.ValidationMessageFor(x => x.Prod.Supplier_Price)
+            <br />
+            Price: <input id="Text1" name="Price" type="number" value="@Model.Prod.Price" /> @Html.ValidationMessageFor(x => x.Prod.Price)
+            <br />
+            Picture: <input id="Text1" name="Pic_URL" type="text" value="@Model.Prod.Pic_URL" /> @Html.ValidationMessageFor(x => x.Prod.Pic_URL)
+            <br />
+
+            <input id="Submit1" type="submit" value="Add" />
+            <br />
+        </form>*@
+
+
+
+
+        <div class="table_manager">
+            <table>
+                @foreach (Product obj in Model.Prod_List)
+                {
+                    <tr>
+                        <td><img class="small_img" src=@obj.Pic_URL /></td>
+                        <td class="product_name">@obj.Name</td>
+                        <td class="product_des">@obj.Description</td>
+                        <td class="product_buy"> <button  type="button" class="btn btn-default navbar-btn">  <div class="alert-info">Delete Item</div>  </button></td>
+                    </tr>
+                }
+            </table>
+        </div>
+
+        @*@{
+            WebGrid obj = new WebGrid(Model.Prod_List);
+        }
+
+        @obj.GetHtml()*@
+
+
+    </div>
+</body>
+</html>

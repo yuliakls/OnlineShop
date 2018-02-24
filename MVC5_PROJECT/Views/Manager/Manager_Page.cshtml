@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "My_Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>manager's Page</h2>
+<table>
+    <tr>
+        <td>
+            <button onclick="location.href='@Url.Content("~/Manager/Customer_List")'" type="button" class="btn btn-default navbar-btn">View Customers</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="location.href='@Url.Content("~/Product/AddProduct")'" type="button" class="btn btn-default navbar-btn">Add Product (Manager)</button>
+        </td>
+    </tr>
+</table>

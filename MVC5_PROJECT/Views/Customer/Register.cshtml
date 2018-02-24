@@ -1,0 +1,64 @@
+﻿@model MVC5_PROJECT.Models.Customer
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+</head>
+<body>
+
+
+    <div>
+
+
+        @*<form action="Submit" method="post">
+
+    Email: <input id="Text1" name="Customer_Email" type="text" value="@Model.Email"/>@Html.ValidationMessageFor(x=>x.Email)
+    <br />
+    PassWord: <input id="Password1" name="Customer_PW" type="password" value="@Model.PW" /> @Html.ValidationMessageFor(x => x.PW)
+    <br />
+    First name: <input id="Text1" name="Customer_FName" type="text" value="@Model.FName"/> @Html.ValidationMessageFor(x => x.FName)
+    <br />
+    Last name<input id="Text1" name="Customer_LName" type="text" value="@Model.LName"/> @Html.ValidationMessageFor(x => x.LName)
+    <br />
+    <input id="Submit1" type="submit" value="Register" />
+    <br />
+            </form>*@
+            
+          
+            @using (Html.BeginForm("Submit", "Customer", FormMethod.Post))
+            {
+
+
+                <p>Email: </p>@Html.TextBoxFor(m => m.Email)  @Html.ValidationMessageFor(x => x.Email) 
+                if (Session["DuplicateEmail"] != null)
+                    {
+                        @Session["DuplicateEmail"].ToString();
+                    }
+                 
+                <br />
+                <p>PassWord: </p>@Html.PasswordFor(m => m.PW)  @Html.ValidationMessageFor(x => x.PW)
+                <br />
+                <p>First name: </p>@Html.TextBoxFor(m => m.FName)  @Html.ValidationMessageFor(x => x.FName)
+                <br />
+                <p>Last name: </p>@Html.TextBoxFor(m => m.LName)  @Html.ValidationMessageFor(x => x.LName)
+                <br />
+                <input id="Submit1" type="submit" value="Register" />
+                <br />
+
+                }
+
+
+
+</div>
+    </body>
+</html>
+
+
+
